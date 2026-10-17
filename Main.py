@@ -10,22 +10,23 @@ app = Flask('')
 
 @app.route('/')
 def home():
-    return "JEE 2029 Bot is running online 24/7!"
+    return "JEE 2027 Bot is running online 24/7!"
 
 def run_dummy_server():
     port = int(os.environ.get("PORT", 8080))
     app.run(host='0.0.0.0', port=port)
 
 # --- TELEGRAM BOT LOGIC ---
-BOT_TOKEN = os.environ.get('BOT_TOKEN')
+# 🔴 PASTE YOUR FRESH NEW BOTFATHER TOKEN DIRECTLY INSIDE THE SINGLE QUOTES BELOW!
+BOT_TOKEN ='8881553526:AAF01e2Us5PHjmIcY4d7L_5kzSzLsz0qLvo'
 bot = telebot.TeleBot(BOT_TOKEN)
 
-# 🔴 Paste your specific group username inside single quotes (e.g., '@JEE_PYRAMIDS')
+# 🔴 Locked into your group link username!
 GROUP_CHAT_ID = '@JEE_PYRAMIDS'
 
 def get_countdown_text():
     today = datetime.now()
-    target = datetime(2029, 1, 20) # 🎯 Target Exam Date: 20th January 2029
+    target = datetime(2027, 1, 20) # 🎯 Target Exam Date: 20th January 2027
     
     difference = target - today
     days_left = difference.days
@@ -35,9 +36,9 @@ def get_countdown_text():
     today_str = today.strftime("%dth %B, %Y")
     
     return (
-        "⏳ **JEE Main 2029 Countdown** ⏳\n\n"
+        "⏳ **JEE Main 2027 Countdown** ⏳\n\n"
         f"📅 Today: {today_str}\n"
-        "🎯 Estimated Target: 20th January 2029\n"
+        "🎯 Estimated Target: 20th January 2027\n"
         f"⏳ Days Left: {days_left}\n"
         f"📅 Weeks Left: {weeks_left} weeks + {extra_days} days\n\n"
         "Keep going. Every day counts! 🔥"
@@ -46,7 +47,7 @@ def get_countdown_text():
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
     welcome_text = (
-        "Your daily dose of motivation and reality check for JEE Main 2029.\n\n"
+        "Your daily dose of motivation and reality check for JEE Main 2027.\n\n"
         "📖 Available Commands:\n"
         "• /countdown - Get the live dynamic exam timer\n"
         "• /syllabus - View full course summary overview\n"
@@ -79,7 +80,7 @@ def send_syllabus(message):
 @bot.message_handler(func=lambda msg: msg.text is not None and msg.text.startswith('/physics'))
 def send_physics(message):
     physics_text = (
-        "📚 **Physics Syllabus (JEE 2029)** 📚\n\n"
+        "📚 **Physics Syllabus (JEE 2027)** 📚\n\n"
         "📌 **Class 11:**\n"
         "• Physical World & Measurement\n"
         "• Kinematics & Laws of Motion\n"
@@ -104,7 +105,7 @@ def send_physics(message):
 @bot.message_handler(func=lambda msg: msg.text is not None and msg.text.startswith('/chemistry'))
 def send_chemistry(message):
     chemistry_text = (
-        "📚 **Chemistry Syllabus (JEE 2029)** 📚\n\n"
+        "📚 **Chemistry Syllabus (JEE 2027)** 📚\n\n"
         "📌 **Class 11:**\n"
         "• Some Basic Concepts (Mole Concept)\n"
         "• Structure of Atom\n"
@@ -133,7 +134,7 @@ def send_chemistry(message):
 @bot.message_handler(func=lambda msg: msg.text is not None and msg.text.startswith('/maths'))
 def send_maths(message):
     maths_text = (
-        "📚 **Mathematics Syllabus (JEE 2029)** 📚\n\n"
+        "📚 **Mathematics Syllabus (JEE 2027)** 📚\n\n"
         "📌 **Class 11:**\n"
         "• Sets, Relations & Functions\n"
         "• Trigonometric Functions\n"
@@ -165,7 +166,7 @@ def automatic_scheduler():
         if current_time.hour == 1 and current_time.minute == 30:
             try:
                 response = get_countdown_text()
-                bot.send_message(chat_id=GROUP_CHAT_ID, text=f"📢 **DAILY MORNING CHECK-IN (JEE 2029)**\n\n{response}")
+                bot.send_message(chat_id=GROUP_CHAT_ID, text=f"📢 **DAILY MORNING CHECK-IN (JEE 2027)**\n\n{response}")
             except Exception as e:
                 print("Error sending automatic message:", e)
             time.sleep(60)
