@@ -150,7 +150,8 @@ def automatic_scheduler():
         current_time = datetime.utcnow()
         
         if current_time.hour == 1 and current_time.minute == 30:
-            if GROUP_CHAT_ID != '-1002968640335':               try:
+            if GROUP_CHAT_ID != '-1002968640335':               
+                try:
                     response = get_countdown_text()
                     bot.send_message(chat_id=int(GROUP_CHAT_ID), text=f"📢 DAILY MORNING ALERTS\n\n{response}")
                 except Exception as e:
