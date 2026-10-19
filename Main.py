@@ -18,7 +18,7 @@ def run_dummy_server():
 
 # --- TELEGRAM BOT LOGIC ---
 # 🔴 PASTE YOUR FRESH NEW BOTFATHER TOKEN DIRECTLY INSIDE THE SINGLE QUOTES BELOW!
-BOT_TOKEN ='8881553526:AAF01e2Us5PHjmIcY4d7L_5kzSzLsz0qLvo'
+BOT_TOKEN ='8810057391:AAHMNN-qtGdcTBKArOezfvaNgCE9dzODA6M'
 bot = telebot.TeleBot(BOT_TOKEN)
 
 # 🔴 Locked into your group link username!
